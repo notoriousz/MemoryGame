@@ -5,35 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../src/components/style.css">
+  <script type="module" src="../index.js"></script>
+  <script type="module" src="../src/memory-game.js"></script>
+  <script type="module" src="../src/screen.js"></script>
   <title>Memory Game</title>
 </head>
+
 <!-- Iniciar game e mostrar cards  -->
 <body class="container-fluid">
   <div class="container-fluid">
     <button type="button" class="btn btn-success" id="jogar">Clique para iniciar</button>
     <button type="button" class="btn btn-danger" id="mostrarTudo">Mostrar tudo</button>
   </div>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card" style="width: 50%;">
-        <img src="../assets/american.png" class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 50%;">
-        <img src="../assets/batman.png" class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 50%;">
-        <img src="../assets/iron-man.png" class="card-img-top" alt="...">
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card" style="width: 50%;">
-        <img src="../assets/lanterna-verde.png" class="card-img-top" alt="...">
-      </div>
-    </div>
-  </div>  
+
+<!-- Cards que vao ser colocadas dinamicamente pelo JavaScript  -->
+
+  <div id="content" class="row">
+
+  </div>
+
 </body>
 </html>
