@@ -1,7 +1,10 @@
-const ID_CONTENT = 'content'
+const ID_CONTENT = 'content';
 
-export class ScreenHTML {
-  static initContentHTML(item) {
+//Responsavel apenas por alterar os conteudos
+export class Tela {
+  static obterCodigoHtml(item) {
+    //Base do HTML para cada imagem que vamos colocar
+    //Pega cada imagem dinamicamente pelo template string
     return `
     <div class="col-md-3">
     <div class="card" style="width: 50%;">
@@ -11,20 +14,21 @@ export class ScreenHTML {
    `
   }
 
-  static setContentHTML(htmlCode) {
+  static alterarConteudoHtml(htmlCode) {
+    //Insere no HTML o conteudo
     const conteudo = document.getElementById(ID_CONTENT);
     conteudo.innerHTML = htmlCode;
   }
 
-  static stringForImageGeneretor(itens) {
+  static gerarStringPorImagem(itens) {
     //para cada item da lista vai exercutar a função para gerar o HTML
     //e concatena tudo em uma unica string
-    //muda de array para string
-    return itens.map(ScreenHTML.initContentHTML().join(''))
+    //No final muda de array para string
+    return itens.map(Tela.obterCodigoHtml).join('')
   }
 
-  static attImagens(itens) {
-    const codeHtml = ScreenHTML.stringForImageGeneretor(itens);
-    ScreenHTML.setContentHTML(codeHtml);
+  static atualizarImagens(itens) {
+    const codeHtml = Tela.gerarStringPorImagem(itens);
+    Tela.alterarConteudoHtml(codeHtml);
   }
 }

@@ -1,15 +1,15 @@
-import { ScreenHTML } from "./src/screen.js";
+import { Tela } from "./src/screen.js";
 import { MemoryGame } from "./src/memory-game.js";
 
+//Apenas chama o inicializar, para dar inicio ao jogo
 function onLoadScreen() {
-  //Adicionado herois dinamicamente
-  const heroi = {
-    img: '../assets/american.png',
-    name: 'american-captain'
+  //a variavel dependencias está pegando a classe Tela e adicionando na logica do jogo da memoria.
+  const dependencias = {
+    tela: Tela //a classe Tela é global
   }
-  const test = ScreenHTML.initContentHTML(heroi)
-  console.log(test)
-  ScreenHTML.setContentHTML(heroi)
+  //iniciar jogo da memoria
+  const jogoDaMemoria = new MemoryGame(dependencias);
+  jogoDaMemoria.inicializarGame();
 }
 
-window.onLoad = onLoadScreen()
+window.onLoad = onLoadScreen();
