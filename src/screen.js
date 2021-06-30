@@ -1,4 +1,6 @@
 const ID_CONTENT = 'content';
+const ID_BTN_JOGAR = 'jogar';
+
 
 //Responsavel apenas por alterar os conteudos
 export class Tela {
@@ -30,5 +32,9 @@ export class Tela {
   static atualizarImagens(itens) {
     const codeHtml = Tela.gerarStringPorImagem(itens);
     Tela.alterarConteudoHtml(codeHtml);
+  }
+  static configurarBotaoJogar(initOnClick) {
+    const btnJogar = document.getElementById(ID_BTN_JOGAR);
+    btnJogar.onclick = initOnClick;
   }
 }
