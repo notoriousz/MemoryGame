@@ -1,3 +1,4 @@
+
 import { Util } from "./util.js";
 //metodos estáticos não podem acessar o 'this'
 //então nossa classe 'util' não pode ser acessada usando o construtor
@@ -24,15 +25,15 @@ const MENSAGENS = {
 
 //classe responsavel por alterar os conteudos na tela
 export class Tela {
-
+  
   static obterCodigoHtml(item) {
     //Base do HTML para cada imagem que vamos colocar
     //Pega cada imagem dinamicamente pelo template string
     return `
     <div class="col-md-3">
-    <div class="card" style="width: 50%;" onclick="window.verificarSelecao('${item.id}', '${item.nome}')">
-      <img src="${item.img}" name="${item.nome}" class="card-img-top" alt="...">
-    </div>
+      <div class="card" style="width: 50%;" onclick="window.verificarSelecao('${item.id}', '${item.nome}')">
+        <img src="${item.img}" name="${item.nome}" class="card-img-top" alt="...">
+      </div>
     </div>
    `
   }
@@ -72,6 +73,7 @@ export class Tela {
     //trocaremos a imagem padrao para o heroi setando o src
     elementosHtml.forEach(item => item.src = img)
   }
+  
   static async mostrarMensagem(success = true) {
     const elemento = document.getElementById(ID_MENSAGEM);
     if(success) {
