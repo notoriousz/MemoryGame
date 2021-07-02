@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="../src/components/style.css">
   <script type="module" src="../index.js"></script>
+  <script type="module" src="../src/util.js"></script>
   <script type="module" src="../src/memory-game.js"></script>
   <script type="module" src="../src/screen.js"></script>
   <title>Memory Game</title>
@@ -19,10 +20,21 @@
     <button type="button" class="btn btn-danger" id="mostrarTudo">Mostrar tudo</button>
   </div>
 
+<!-- contador  -->
+  <div id="carregando" class="row container-fluid invisible">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <strong id="contador">Começando em 1 ...</strong>
+  </div>
+
 <!-- Cards que vao ser colocadas dinamicamente pelo JavaScript  -->
-
   <div id="content" class="row">
+  </div>
 
+  <div class="row container-fluid">
+    <div id="mensagem" class="alert alert-success alert-danger invisible" role="alert">
+    </div>
   </div>
 
 </body>
